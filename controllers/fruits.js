@@ -2,7 +2,7 @@ const Fruit = require('../models/Fruit')
 
 const index = async (req, res) => {
     try {
-        const fruits = await Fruit.showAll()
+        const fruits = await Fruit.showall()
         res.status(200).send(fruits)
     }catch (err) {
         res.status(404).send({error: err})
