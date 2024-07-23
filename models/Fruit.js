@@ -23,6 +23,8 @@ class Fruit {
     }
     static create(data) {
         const newFruit = data
+        const fruit = fruits.find(fruit => fruit.name.toLowerCase() == this.name.toLowerCase())
+        newFruit.id = fruits.length + 1
         fruits.push(newFruit)
         return new Fruit(newFruit)
     }

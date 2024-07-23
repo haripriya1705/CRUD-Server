@@ -27,6 +27,7 @@ const show = (req, res) => {
 
     const create = async (req, res) => {
         const data = req.body
+        const fruit = fruits.find(fruit => fruit.name.toLowerCase() == this.name.toLowerCase())
         try{
             const newFruit = await Fruit.create(data)
             res.status(201).send(newFruit)
