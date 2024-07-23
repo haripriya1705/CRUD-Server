@@ -24,9 +24,14 @@ class Fruit {
     static create(data) {
         const newFruit = data
         const fruit = fruits.find(fruit => fruit.name.toLowerCase() == this.name.toLowerCase())
-        newFruit.id = fruits.length + 1
-        fruits.push(newFruit)
-        return new Fruit(newFruit)
+        if(newFruit === fruit){
+            throw "Fruit already exists"
+        }else {
+            newFruit.id = fruits.length + 1
+            fruits.push(newFruit)
+            return new Fruit(newFruit)
+        }
+
     }
     update(data) {
         const updatedFruit = fruits.find(fruit => fruit.name.toLowerCase() == this.name.toLowerCase())
